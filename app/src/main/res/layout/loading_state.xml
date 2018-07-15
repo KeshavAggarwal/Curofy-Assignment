@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.keshavaggarwal.curofyassignment.utils.Status"/>
+        <variable
+            name="resource"
+            type="com.example.keshavaggarwal.curofyassignment.utils.Resource"/>
+    </data>
+
+    
+<android.support.v7.widget.CardView
+    android:layout_width="100dp"
+    app:visibleGone="@{resource.data == null}"
+    app:cardCornerRadius="6dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:elevation="8dp"
+    android:layout_height="100dp">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pb"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        style="?android:attr/progressBarStyle"
+        app:visibleGone="@{resource.status == Status.LOADING}"/>
+
+</android.support.v7.widget.CardView>
+</layout>
